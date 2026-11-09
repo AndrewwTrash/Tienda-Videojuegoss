@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nivel Extra | Videojuegos en formato físico</title>
+  <meta name="description" content="Tienda de videojuegos físicos para PlayStation, Xbox, Nintendo Switch y PC. Cajas originales, envío seguro.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <a href="#inicio" class="logo">Nivel Extra</a>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#fisico">Por qué físico</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <button class="cart-btn" id="openCart" aria-label="Abrir carrito">
+      Carrito <span class="cart-count" id="cartCount">0</span>
+    </button>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">Menú</button>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Tu próximo juego, en una caja que puedes sostener.</h1>
+        <p>Ediciones físicas originales para PlayStation, Xbox, Nintendo Switch y PC. Revisadas una por una antes de enviarlas.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#catalogo">Ver catálogo</a>
+          <a class="btn btn-ghost" href="#fisico">Por qué comprar físico</a>
+        </div>
+      </div>
+      <div class="hero-shelf" aria-hidden="true">
+        <div class="case c1"><span>Aventura</span></div>
+        <div class="case c2"><span>Carreras</span></div>
+        <div class="case c3"><span>Acción</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="catalogo">
+      <h2>Catálogo</h2>
+      <div class="filters" id="filters" role="group" aria-label="Filtrar por plataforma">
+        <button class="chip active" data-filter="todos">Todos</button>
+        <button class="chip" data-filter="PlayStation">PlayStation</button>
+        <button class="chip" data-filter="Xbox">Xbox</button>
+        <button class="chip" data-filter="Switch">Nintendo Switch</button>
+        <button class="chip" data-filter="PC">PC</button>
+      </div>
+      <div class="grid" id="grid"></div>
+    </section>
+
+    <section class="section perks" id="fisico">
+      <h2>Por qué comprar físico</h2>
+      <div class="perks-grid">
+        <article>
+          <h3>Es tuyo de verdad</h3>
+          <p>Sin licencias que desaparezcan ni tiendas digitales que cierren. El disco o cartucho se queda contigo.</p>
+        </article>
+        <article>
+          <h3>Lo puedes revender o prestar</h3>
+          <p>Cuando termines el juego, cámbialo con un amigo o véndelo. Un juego digital no se puede mover.</p>
+        </article>
+        <article>
+          <h3>Para tu colección</h3>
+          <p>Carátula, manual y caja. Se ve bien en la repisa y conserva su valor.</p>
+        </article>
+        <article>
+          <h3>Sin descargas enormes</h3>
+          <p>Insertas el disco y juegas. Ahorras espacio y datos de internet.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section contact" id="contacto">
+      <div>
+        <h2>¿Buscas un juego que no ves?</h2>
+        <p>Escríbenos y lo conseguimos. Respondemos de lunes a sábado, de 9:00 a 18:00.</p>
+      </div>
+      <a class="btn btn-primary" id="waLink" href="#" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Nivel Extra. Todos los derechos reservados.</p>
+  </footer>
+
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="drawer" id="drawer" aria-label="Carrito de compras" aria-hidden="true">
+    <div class="drawer-head">
+      <h2>Tu carrito</h2>
+      <button class="close" id="closeCart" aria-label="Cerrar carrito">Cerrar</button>
+    </div>
+    <ul class="cart-list" id="cartList"></ul>
+    <div class="drawer-foot">
+      <p class="total">Total <strong id="cartTotal">$0</strong></p>
+      <button class="btn btn-primary full" id="checkout">Pedir por WhatsApp</button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
